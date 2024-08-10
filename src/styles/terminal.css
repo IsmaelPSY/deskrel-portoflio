@@ -1,0 +1,139 @@
+/* src/styles/terminal.css */
+/* Eric Meyer's Reset CSS v2.0 - http://meyerweb.com/eric/tools/css/reset/ 
+   Licensed under the MIT License. */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+   
+a {
+  color: inherit;         /* Use the same color as the parent element */
+  background: none;       /* Remove any background */
+  border: none;           /* Remove any borders */
+  padding: 0;             /* Reset padding */
+  margin: 0;              /* Reset margin */
+  outline: none;          /* Remove the outline when focused */
+  font: inherit;          /* Inherit the font styles from the parent */
+}
+
+
+body {
+  background-color: #300A24;
+}
+
+
+.terminal {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Ubuntu Mono', monospace;
+  padding: 16px;
+  margin: 16px;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #555;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.buttons span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.close {
+  background-color: #ff5f56;
+}
+
+.minimize {
+  background-color: #ffbd2e;
+}
+
+.maximize {
+  background-color: #27c93f;
+}
+
+.title {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.terminal-body {
+  margin-top: 16px;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+  margin-top: .5rem;
+}
+
+.input-line input {
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+}
+
+.command-line {
+  margin-top: .5rem;
+}
+
+.contact-link {
+  margin-top: .5rem;
+  display: block;
+}
