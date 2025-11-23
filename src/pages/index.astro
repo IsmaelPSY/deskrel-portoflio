@@ -1,18 +1,118 @@
 ---
 import Portfolio from '../components/Portfolio.jsx';
 import '../styles/portfolio.css';
+
+// SEO Configuration
+const siteTitle = "Ismael Sanchez - Software Engineer | Elixir & Phoenix Developer";
+const siteDescription = "Software Engineer specialized in Elixir and Phoenix with 3+ years of experience in fintech and startups. Expert in backend development, GraphQL, AWS, and modern web technologies. Available for remote opportunities.";
+const siteUrl = "https://ismael-sanchez.vercel.app"; // Update with your actual domain
+const siteImage = `${siteUrl}/og-image.jpg`; // We'll create this later
+const authorName = "Ismael Sanchez";
+const authorEmail = "ismaelpsy.12@gmail.com";
+const linkedinProfile = "https://www.linkedin.com/in/ismael-sanchez-pem";
 ---
 
 <html lang="en">
 	<head>
+		<!-- Basic Meta Tags -->
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Ismael Sanchez - Software Engineer</title>
-		<meta name="description" content="Software Engineer specialized in Elixir and Phoenix. Backend developer with experience in GraphQL, AWS, and modern web technologies." />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+		
+		<!-- SEO Meta Tags -->
+		<title>{siteTitle}</title>
+		<meta name="description" content={siteDescription} />
+		<meta name="keywords" content="Ismael Sanchez, Software Engineer, Elixir Developer, Phoenix Framework, Backend Developer, GraphQL, AWS, React, JavaScript, Web Development, Fintech, Remote Work, Peru Developer, Full Stack" />
+		<meta name="author" content={authorName} />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={siteUrl} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={siteUrl} />
+		<meta property="og:title" content={siteTitle} />
+		<meta property="og:description" content={siteDescription} />
+		<meta property="og:image" content={siteImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:site_name" content="Ismael Sanchez Portfolio" />
+		<meta property="og:locale" content="en_US" />
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={siteUrl} />
+		<meta name="twitter:title" content={siteTitle} />
+		<meta name="twitter:description" content={siteDescription} />
+		<meta name="twitter:image" content={siteImage} />
+		<meta name="twitter:creator" content="@ismael_sanchez" />
+		
+		<!-- Additional SEO Meta Tags -->
+		<meta name="theme-color" content="#3b82f6" />
+		<meta name="msapplication-TileColor" content="#3b82f6" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="apple-mobile-web-app-title" content="Ismael Sanchez" />
+		
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Ismael Sanchez",
+				"jobTitle": "Software Engineer",
+				"description": "Software Engineer specialized in Elixir and Phoenix with experience in fintech and startups",
+				"url": "https://ismael-sanchez.vercel.app",
+				"email": "ismaelpsy.12@gmail.com",
+				"sameAs": [
+					"https://www.linkedin.com/in/ismael-sanchez-pem",
+					"https://github.com/ismael-sanchez"
+				],
+				"worksFor": {
+					"@type": "Organization",
+					"name": "Shinkansen"
+				},
+				"alumniOf": {
+					"@type": "EducationalOrganization",
+					"name": "Universidad Nacional Amazónica de Madre de Dios"
+				},
+				"knowsAbout": [
+					"Elixir",
+					"Phoenix Framework",
+					"GraphQL",
+					"AWS",
+					"React",
+					"Backend Development",
+					"Fintech",
+					"Web Development"
+				],
+				"address": {
+					"@type": "PostalAddress",
+					"addressCountry": "Peru"
+				},
+				"hasOccupation": {
+					"@type": "Occupation",
+					"name": "Software Engineer",
+					"description": "Backend development with focus on Elixir and Phoenix",
+					"skills": ["Elixir", "Phoenix", "GraphQL", "AWS", "React", "MySQL", "GCP"]
+				}
+			}
+		</script>
+		
+		<!-- Favicons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		
+		<!-- Preconnect for Performance -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+		
+		<!-- Stylesheets -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 	</head>
 	<body>
 		<Portfolio client:load />

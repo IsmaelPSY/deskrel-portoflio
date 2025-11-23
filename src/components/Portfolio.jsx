@@ -130,25 +130,30 @@ const Portfolio = () => {
     <div className="portfolio">
       {/* Header */}
       <header className="header">
-        <nav className="nav">
+        <nav className="nav" role="navigation" aria-label="Main navigation">
           <div className="nav-brand">
-            <span className="logo">IS</span>
+            <span className="logo" aria-label="Ismael Sanchez initials">IS</span>
           </div>
-          <ul className="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <ul className="nav-links" role="list">
+            <li><a href="#about" aria-label="Navigate to About section">About</a></li>
+            <li><a href="#experience" aria-label="Navigate to Experience section">Experience</a></li>
+            <li><a href="#projects" aria-label="Navigate to Projects section">Projects</a></li>
+            <li><a href="#education" aria-label="Navigate to Education section">Education</a></li>
+            <li><a href="#contact" aria-label="Navigate to Contact section">Contact</a></li>
           </ul>
-          <button className="theme-toggle" onClick={toggleTheme}>
+          <button 
+            className="theme-toggle" 
+            onClick={toggleTheme}
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
             <i className={darkMode ? 'fas fa-sun' : 'fas fa-moon'}></i>
           </button>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" role="banner">
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
@@ -159,12 +164,12 @@ const Portfolio = () => {
               Software Engineer with experience in <strong>startups and technological innovation projects</strong>. Specialized in <strong>Elixir, Phoenix, and functional programming</strong>. My adaptability and rapid learning allow me to integrate effectively into dynamic work teams, contributing to company success from early project stages.
             </p>
             <div className="hero-cta">
-              <a href="#contact" className="btn btn-primary">
-                <i className="fas fa-envelope"></i>
+              <a href="#contact" className="btn btn-primary" aria-label="Navigate to contact section">
+                <i className="fas fa-envelope" aria-hidden="true"></i>
                 Get in touch
               </a>
-              <a href="https://www.linkedin.com/in/ismael-sanchez-pem" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                <i className="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/ismael-sanchez-pem" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" aria-label="Visit Ismael Sanchez LinkedIn profile (opens in new tab)">
+                <i className="fab fa-linkedin" aria-hidden="true"></i>
                 LinkedIn
               </a>
             </div>
@@ -173,9 +178,9 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="section about">
+      <section id="about" className="section about" aria-labelledby="about-heading">
         <div className="container">
-          <h2 className="section-title">About Me</h2>
+          <h2 id="about-heading" className="section-title">About Me</h2>
           <div className="about-content">
             <div className="about-text">
               <p>
@@ -190,14 +195,14 @@ const Portfolio = () => {
             </div>
             <div className="skills-section">
               <h3 className="skills-title">Technical Skills</h3>
-              <div className="technical-skills-grid">
+              <div className="technical-skills-grid" role="list" aria-label="Technical skills">
                 {skills.map((skill, index) => (
                   <span key={index} className="tech-skill-tag">{skill.name}</span>
                 ))}
               </div>
               
               <h3 className="skills-title">Soft Skills</h3>
-              <div className="soft-skills-grid">
+              <div className="soft-skills-grid" role="list" aria-label="Soft skills">
                 {softSkills.map((skill, index) => (
                   <span key={index} className="soft-skill-tag">{skill}</span>
                 ))}
@@ -218,9 +223,9 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="section experience">
+      <section id="experience" className="section experience" aria-labelledby="experience-heading">
         <div className="container">
-          <h2 className="section-title">Work Experience</h2>
+          <h2 id="experience-heading" className="section-title">Work Experience</h2>
           <div className="timeline">
             {experience.map((job, index) => (
               <div key={index} className="timeline-item">
@@ -255,9 +260,9 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="section projects">
+      <section id="projects" className="section projects" aria-labelledby="projects-heading">
         <div className="container">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 id="projects-heading" className="section-title">Featured Projects</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
               <div key={index} className="project-card">
@@ -282,9 +287,9 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="section education">
+      <section id="education" className="section education" aria-labelledby="education-heading">
         <div className="container">
-          <h2 className="section-title">Education</h2>
+          <h2 id="education-heading" className="section-title">Education</h2>
           <div className="education-grid">
             {education.map((edu, index) => (
               <div key={index} className="education-item">
@@ -302,20 +307,20 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section contact">
+      <section id="contact" className="section contact" aria-labelledby="contact-heading">
         <div className="container">
-          <h2 className="section-title">Let's Connect</h2>
+          <h2 id="contact-heading" className="section-title">Let's Connect</h2>
           <div className="contact-content">
             <p className="contact-description">
               Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
             </p>
             <div className="contact-methods">
-              <a href="mailto:ismaelpsy.12@gmail.com" className="contact-item">
-                <i className="fas fa-envelope"></i>
+              <a href="mailto:ismaelpsy.12@gmail.com" className="contact-item" aria-label="Send email to ismaelpsy.12@gmail.com">
+                <i className="fas fa-envelope" aria-hidden="true"></i>
                 <span>ismaelpsy.12@gmail.com</span>
               </a>
-              <a href="https://www.linkedin.com/in/ismael-sanchez-pem" target="_blank" rel="noopener noreferrer" className="contact-item">
-                <i className="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/ismael-sanchez-pem" target="_blank" rel="noopener noreferrer" className="contact-item" aria-label="Visit Ismael Sanchez LinkedIn profile (opens in new tab)">
+                <i className="fab fa-linkedin" aria-hidden="true"></i>
                 <span>LinkedIn Profile</span>
               </a>
             </div>
@@ -324,7 +329,7 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer" role="contentinfo">
         <div className="container">
           <p>&copy; 2024 Ismael Sanchez. Built with Astro & React.</p>
         </div>

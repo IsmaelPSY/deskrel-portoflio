@@ -17,16 +17,31 @@ All commands are run from the project root:
 This is an Astro-based portfolio website with SSR capabilities configured for Vercel deployment.
 
 ### Key Components
-- **Terminal Interface**: Interactive terminal-style portfolio (`src/components/Terminal.jsx`)
-  - React component with command-line interface simulation
-  - Commands: help, welcome, about, projects, contact, experience, clear
-  - State management for command history and user input
+- **Portfolio Component**: Main React component rendering the complete portfolio (`src/components/Portfolio.jsx`)
+  - Professional portfolio with sections: Hero, About, Experience, Projects, Education, Contact
+  - Dark/Light theme toggle with localStorage persistence
+  - Responsive design with CSS Grid and Flexbox layouts
+  - Dynamic content rendering from hardcoded data arrays
 
 ### Project Structure
-- `src/pages/index.astro` - Main page with Terminal component
-- `src/components/Terminal.jsx` - Interactive terminal component
-- `src/styles/terminal.css` - Terminal styling
+- `src/pages/index.astro` - Main page with Portfolio component and meta tags
+- `src/components/Portfolio.jsx` - Complete portfolio React component with all sections
+- `src/styles/portfolio.css` - Comprehensive styling with CSS custom properties for theming
 - `astro.config.mjs` - Astro configuration with React integration and Vercel adapter
+
+### Content Management
+The portfolio data is currently hardcoded within the Portfolio.jsx component:
+- `experience` array - Work history with detailed responsibilities and technologies
+- `projects` array - Featured projects with descriptions, technologies, and highlights
+- `skills` array - Technical skills with proficiency levels and categories
+- `education` array - Educational background and certifications
+- `languages` array - Language proficiencies
+
+### Styling Architecture
+- CSS custom properties (`--bg-primary`, `--text-primary`, etc.) for theme management
+- Responsive breakpoints at 768px and 480px
+- Component-based styling with consistent spacing and typography
+- Smooth transitions and hover effects throughout
 
 ### Configuration
 - **Output**: Server-side rendering enabled (`output: "server"`)
