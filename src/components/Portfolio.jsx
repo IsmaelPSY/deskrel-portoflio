@@ -20,8 +20,7 @@ const Portfolio = () => {
     {
       company: "Shinkansen",
       position: "Software Engineer",
-      period: "Jan 2024 - Present",
-      duration: "11 months",
+      period: "January 2024 - Present",
       location: "Remote - Peru",
       description: "Part of the development team at Shinkansen, a Chilean fintech that connects companies with the banking system to automate payment flows and treasury operations.",
       responsibilities: [
@@ -35,8 +34,7 @@ const Portfolio = () => {
     {
       company: "FractalUp",
       position: "Backend Developer Jr",
-      period: "Aug 2022 - Jan 2024",
-      duration: "1 year 6 months",
+      period: "August 2022 - January 2024",
       location: "Remote - Peru",
       description: "Backend development team leader at FractalUp. Responsible for server administration and implementation of new platform services.",
       responsibilities: [
@@ -52,8 +50,7 @@ const Portfolio = () => {
     {
       company: "Freelance",
       position: "E-Learning Professor",
-      period: "Jan 2022 - Aug 2022",
-      duration: "8 months",
+      period: "January 2022 - August 2022",
       location: "Remote - Peru",
       description: "Virtual programming instructor teaching students and general public interested in programming.",
       responsibilities: [
@@ -235,7 +232,7 @@ const Portfolio = () => {
                     <h3 className="job-title">{job.position}</h3>
                     <div className="job-company">{job.company}</div>
                     <div className="job-period">
-                      {job.period} • {job.duration}
+                      {job.period}
                       {job.location && <span className="job-location"> • {job.location}</span>}
                     </div>
                   </div>
